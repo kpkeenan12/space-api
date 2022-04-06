@@ -12,5 +12,5 @@ class EndpointTests(unittest.TestCase):
     
     def test_can_post_cdm_file(self):
         with open("{0}/sample_files/example_cdm.txt".format(self.dir), "rb") as cdm_file:
-            response = self.app.post("/cdm", data={"file": cdm_file}, content_type='multipart/form-data')
+            response = self.app.post("/cdm", data={"file": cdm_file})
             self.assertEqual(response.status_code, 202)
